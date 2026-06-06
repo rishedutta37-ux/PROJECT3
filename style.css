@@ -1,0 +1,489 @@
+```css
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f8ff;
+    overflow-x:hidden;
+    color:#333;
+}
+
+/* =========================
+   FLOATING BACKGROUND
+========================= */
+
+.background-shapes{
+    position:fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.book{
+    position:absolute;
+    width:120px;
+    height:160px;
+    background:rgba(37,99,235,.12);
+    border-radius:12px;
+    animation:float 8s infinite ease-in-out;
+}
+
+.book1{
+    top:10%;
+    left:5%;
+}
+
+.book2{
+    top:45%;
+    right:5%;
+}
+
+.book3{
+    bottom:10%;
+    left:40%;
+}
+
+@keyframes float{
+
+    50%{
+        transform:translateY(-25px);
+    }
+
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+    background:
+    linear-gradient(
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.6)
+    ),
+
+    url("https://images.unsplash.com/photo-1521587760476-6c12a4b040da");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    color:white;
+    text-align:center;
+
+    padding:100px 20px;
+}
+
+header h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+header p{
+    font-size:1.2rem;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    background:#1e40af;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    padding:15px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+}
+
+.hero h2{
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+/* =========================
+   SEARCH BOX
+========================= */
+
+.search-box{
+    margin-top:20px;
+}
+
+.search-box input{
+
+    width:320px;
+    max-width:90%;
+
+    padding:14px 20px;
+
+    border:none;
+    border-radius:50px;
+
+    box-shadow:0 4px 15px rgba(0,0,0,.15);
+
+    transition:.4s;
+}
+
+.search-box input.active-search{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px rgba(37,99,235,.4);
+
+}
+
+.search-box button{
+
+    padding:14px 18px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+.search-box button:hover{
+    transform:scale(1.1);
+}
+
+/* =========================
+   CATEGORY SECTION
+========================= */
+
+.categories{
+
+    padding:60px 20px;
+
+    text-align:center;
+}
+
+.categories h2{
+    margin-bottom:25px;
+}
+
+.category-container{
+
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.category{
+
+    position:relative;
+    overflow:hidden;
+
+    background:white;
+
+    padding:12px 25px;
+
+    border-radius:40px;
+
+    box-shadow:0 3px 12px rgba(0,0,0,.1);
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.category:hover{
+
+    background:#2563eb;
+    color:white;
+
+    transform:
+    translateY(-5px)
+    scale(1.05);
+}
+
+.category.clicked{
+    animation:pulse .6s ease;
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   BOOK LISTINGS
+========================= */
+
+.books{
+    padding:60px 20px;
+}
+
+.books h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.book-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.book-card{
+
+    background:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.1);
+
+    transition:.4s;
+}
+
+.book-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.15);
+}
+
+.book-card img{
+
+    width:100%;
+    height:220px;
+
+    object-fit:cover;
+
+    border-radius:10px;
+}
+
+.book-card h3{
+    margin-top:10px;
+}
+
+.book-card button{
+
+    margin-top:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   SELLER PROFILE
+========================= */
+
+.seller{
+
+    padding:60px 20px;
+
+    text-align:center;
+}
+
+.seller-card{
+
+    background:white;
+
+    display:inline-block;
+
+    padding:25px;
+
+    border-radius:15px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.1);
+
+    transition:.4s;
+}
+
+.seller-card:hover{
+    transform:translateY(-8px);
+}
+
+.seller-card img{
+
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    margin-bottom:15px;
+}
+
+.seller-card button{
+
+    margin-top:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+}
+
+/* =========================
+   NOTIFICATION POPUP
+========================= */
+
+.notification{
+
+    position:fixed;
+
+    top:20px;
+    right:-300px;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px 25px;
+
+    border-radius:8px;
+
+    box-shadow:
+    0 5px 15px rgba(0,0,0,.2);
+
+    transition:.5s;
+
+    z-index:9999;
+}
+
+.notification.show{
+    right:20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    background:#1e40af;
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+
+    margin-top:40px;
+}
+.news-bar{
+    background:#ffcc00;
+    color:#000;
+    overflow:hidden;
+    white-space:nowrap;
+    padding:12px 0;
+    font-weight:bold;
+}
+
+.news-content{
+    display:inline-block;
+    animation:scrollNews 20s linear infinite;
+}
+
+@keyframes scrollNews{
+    from{
+        transform:translateX(100%);
+    }
+    to{
+        transform:translateX(-100%);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    nav{
+        gap:15px;
+    }
+
+    .hero h2{
+        font-size:1.6rem;
+    }
+
+    .search-box input{
+        width:90%;
+    }
+
+}
+```
